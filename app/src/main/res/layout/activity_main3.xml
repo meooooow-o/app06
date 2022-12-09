@@ -94,30 +94,33 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="甜度："
         android:textColor="#FF5722"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="48dp"
-        tools:layout_editor_absoluteY="241dp" />
+        app:layout_constraintStart_toStartOf="@+id/radio1"
+        app:layout_constraintTop_toBottomOf="@+id/radio1" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="溫度："
         android:textColor="#009688"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="48dp"
-        tools:layout_editor_absoluteY="328dp" />
+        app:layout_constraintStart_toStartOf="@+id/radio2"
+        app:layout_constraintTop_toBottomOf="@+id/radio2" />
 
     <Button
         android:id="@+id/btn_enter2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
         android:text="確認送出"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="473dp" />
+        app:layout_constraintTop_toBottomOf="@+id/radio3" />
 
     <RadioGroup
         android:id="@+id/radio2"
@@ -137,12 +140,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="無糖" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="半糖" />
 
         <RadioButton
@@ -150,6 +147,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="少糖" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="無糖" />
     </RadioGroup>
 
     <RadioGroup
@@ -164,7 +167,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="熱飲" />
+            android:text="正常" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="少冰" />
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -176,13 +185,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="正常" />
+            android:text="熱飲" />
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="少冰" />
     </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

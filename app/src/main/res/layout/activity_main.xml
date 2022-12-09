@@ -112,7 +112,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_drink" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_sweet" />
 
     <TextView
         android:id="@+id/tv_drink"
@@ -135,23 +135,20 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="14dp"
         android:layout_marginEnd="267dp"
-        android:layout_marginBottom="126dp"
         android:text="甜度：無"
         android:textColor="#00BCD4"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_ice" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_drink" />
 
     <Button
         android:id="@+id/btn_renew"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="重新點餐"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_sweet" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_ice" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

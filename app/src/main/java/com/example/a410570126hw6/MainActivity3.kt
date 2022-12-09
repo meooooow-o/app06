@@ -7,40 +7,36 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity3 : AppCompatActivity() {
-    lateinit var selectedDrink: RadioButton
-    lateinit var ice: RadioButton
-    lateinit var sugar: RadioButton
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        data?.extras?.let {
+            if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
+                findViewById<TextView>(R.id.tv_table3).text = "${it.getString("number")}"
+            }
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main3)
-        var tvTable3 = findViewById<TextView>(R.id.tv_table3)
 
-        var drinkGroup = findViewById<RadioGroup>(R.id.radio1)
-        var sugarGroup = findViewById<RadioGroup>(R.id.radio2)
-        var iceGroup = findViewById<RadioGroup>(R.id.radio3)
-
-
-        tvTable3.text = intent.getStringExtra("dataTransfer")
+        val drinkGroup = findViewById<RadioGroup>(R.id.radio1)
+        val sugarGroup = findViewById<RadioGroup>(R.id.radio2)
+        val iceGroup = findViewById<RadioGroup>(R.id.radio3)
 
         findViewById<Button>(R.id.btn_enter2).setOnClickListener {
+            val b = Bundle()
+            b.putString("drink", drinkGroup.findViewById<RadioButton>
+                (drinkGroup.checkedRadioButtonId).text.toString())
+            b.putString("sugar", sugarGroup.findViewById<RadioButton>
+                (sugarGroup.checkedRadioButtonId).text.toString())
+            b.putString("ice", iceGroup.findViewById<RadioButton>
+                (iceGroup.checkedRadioButtonId).text.toString())
 
-            var selectedOption: Int = iceGroup!!.checkedRadioButtonId
-            ice = findViewById(selectedOption)
-
-            var selectedOption: Int = sugarGroup!!.checkedRadioButtonId
-            sugar = findViewById(selectedOption)
-
-            var selectedOption: Int = drinkGroup!!.checkedRadioButtonId
-            selectedDrink = findViewById(selectedOption)
-
-            val finalDrink = "${selectedDrink.text} \n\n甜度:${sugar.text} \n\n冰塊:${ice.text}"
-
-            val intent = Intent().apply {
-                putExtra("result","$finalDrink")
-            }
-
-            setResult(Activity.RESULT_OK,intent)
+            setResult(Activity.RESULT_OK, Intent().putExtras(b))
             finish()
+
         }
     }
 }
